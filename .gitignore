@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Environment variables
+.env
+
+# Uploads
+uploads/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+err.log
+server_log.txt
+error_details.txt
+test_output.txt
+build_output.txt
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
