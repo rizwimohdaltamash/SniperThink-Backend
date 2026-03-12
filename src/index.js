@@ -34,6 +34,20 @@ if (!fs.existsSync(uploadDir)) {
   console.log(`📁 Created upload directory: ${uploadDir}`);
 }
 
+// ─── Root Route ─────────────────────────
+app.get("/", (req, res) => {
+  res.json({
+    message: "🎯 SniperThink API is running",
+    version: "1.0.0",
+    endpoints: {
+      health: "/api/health",
+      upload: "/api/upload",
+      jobs: "/api/jobs",
+      interest: "/api/interest",
+    },
+  });
+});
+
 // ─── Routes ─────────────────────────────
 app.use("/api/upload", uploadRouter);
 app.use("/api/jobs", jobsRouter);
