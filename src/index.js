@@ -18,12 +18,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ─── Middleware ─────────────────────────
 app.use(cors({
   origin: [
-    process.env.FRONTEND_URL || "https://sniper-think-zeta.vercel.app", 
-    "http://localhost:5173"
-  ],
+    "https://sniper-think-zeta.vercel.app", 
+    "http://localhost:5173",
+    process.env.FRONTEND_URL
+  ].filter(Boolean), // Filter out undefined if FRONTEND_URL is not set
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
